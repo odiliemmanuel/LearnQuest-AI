@@ -1,0 +1,46 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* Shared card/grid surface used across every page. Light mode: sky-blue
+   tint with a real border — AppShell's own content panel is already white,
+   so a plain white card would just disappear into it; a distinct tint is
+   what actually creates visible separation. Dark mode: deep navy panel
+   with a soft blue glow border and ambient shadow, matching the
+   "Тихий режим" cosmic-glow reference. */
+@layer components {
+  .lq-card {
+    @apply bg-sky-50 border border-sky-200 transition-colors duration-300;
+  }
+  .dark .lq-card {
+    @apply bg-panel-dark border-primary-500/25;
+    box-shadow:
+      inset 0 1px 0 0 rgba(107, 120, 245, 0.12),
+      0 4px 28px -8px rgba(47, 62, 228, 0.35);
+  }
+
+  /* For grid buttons (class/term/subject pickers, subject cards, etc.) —
+     same surface, slightly bolder border so selected/hover states pop. */
+  .lq-grid-item {
+    @apply bg-sky-50 border-2 border-sky-200 transition-all duration-200;
+  }
+  .dark .lq-grid-item {
+    @apply bg-panel-dark border-primary-500/25;
+  }
+
+  /* Ambient glow used behind hero sections in dark mode, echoing the
+     glowing planet illustration in the reference. Light mode gets no glow —
+     the reference kit's light theme is flat and clean. */
+  .lq-glow {
+    @apply bg-primary-600;
+  }
+  .dark .lq-glow {
+    background-image: radial-gradient(circle at 30% 20%, #4453ea 0%, #2531c4 45%, #171826 100%);
+    box-shadow: 0 0 60px -10px rgba(68, 83, 234, 0.5);
+  }
+}
+

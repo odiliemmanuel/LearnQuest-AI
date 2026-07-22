@@ -1,0 +1,29 @@
+# Environment variables
+.env
+*.env
+!.env.example
+
+# Python virtual environments
+venv/
+.venv/
+env/
+**/venv/
+**/.venv/
+**/env/
+**/learnQuest/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Python build files
+*.egg-info/
+dist/
+build/
+
+# IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
