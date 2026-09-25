@@ -1,4 +1,4 @@
-# LearnQuest
+# LearnQuest-AI
 
 Full-stack MVP: Go backend + React/TypeScript frontend, wired together and
 running against real data (SQLite locally — no external services needed).
